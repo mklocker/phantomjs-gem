@@ -98,7 +98,10 @@ module Phantomjs
         end
 
         def package_url
-          'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2'
+          download_url = ENV['LINUX64_PHANTOM_PACKAGE_URL'] || 'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2'
+          STDOUT.puts "\nDownloading PhantomJS from: #{download_url}"
+          
+          download_url
         end
       end
     end
@@ -114,7 +117,10 @@ module Phantomjs
         end
 
         def package_url
-          'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-i686.tar.bz2'
+          download_url = ENV['LINUX32_PHANTOM_PACKAGE_URL'] || 'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-i686.tar.bz2'
+          STDOUT.puts "\nDownloading PhantomJS from: #{download_url}"
+          
+          download_url
         end
       end
     end
